@@ -8,7 +8,7 @@ class Phrase {
 
 addPhraseToDisplay() {
   const phraseList = document.querySelector('#phrase ul');
-  const textPhrase = this.phrase;
+  const textPhrase = 'this.phrase';
 
   textPhrase.forEach(phraseLetter => {
             const li = document.createElement('li');
