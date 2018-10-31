@@ -1,13 +1,4 @@
-//this is app.js
 const game = new Game();
-
-const phrase = [
-'don dotta',
-'knxledge',
-'yes lawd',
-'suga mama',
-"d'evil"
-];
 
 
  function resetDisplay() {

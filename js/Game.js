@@ -2,14 +2,20 @@ const phrase = new Phrase();
 
 //create game class
 class Game {
-  constuctor( missed, phrases) {
-    this.missed = missed;
-    this.phrases = phrases;
+  constuctor() {
+    this.missed = 0;
+    this.phrases = [
+          new Phrase('don dotta'),
+          new phrase('knxledge'),
+          new phrase('yes lawd'),
+          new phrase('suga mama'),
+          new phrase("d'evil")
+    ];
   }
 
   getRandomPhrase() {
-    var randomPhrase = phrase[Math.floor(Math.randomPhrase() * phrase.length)];
-    return randomPhrase.toUppereCase().split('');
+    let randomPhrase = [Math.floor(Math.random() * phrase.length)];
+    return randomPhrase;
     console.log(randomPhrase);
   }
   handleInteraction(letter) {
@@ -18,7 +24,7 @@ class Game {
       phrase.showMatchedLetter(letter);
     })
   }
-}
+
 
 removeLife() {
   this.missed +=1;
@@ -51,4 +57,6 @@ startGame() {
   this.missed = 0;
   let gamePhrase = this.getRandomPhrase();
   new Phrase(gamePhrase).addPhraseToDisplay()
+}
+
 }

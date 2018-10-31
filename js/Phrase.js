@@ -11,18 +11,18 @@ addPhraseToDisplay() {
   const textPhrase = this.phrase;
 
   textPhrase.forEach(phraseLetter => {
-    const li = document.createElement('li');
-    phraseList.appendChild(li);
-    li.setAttribute('class','hide');
-    li.textContent = phraseletter;
-    return phraseletter !== ' '? li.className = 'letter' : li.className = 'space';
-  });
+            const li = document.createElement('li');
+            phraseList.appendChild(li);
+            li.setAttribute('class', 'hide');
+            li.textContent = phraseLetter;
+            return phraseLetter !== ' ' ? li.className = 'letter' : li.className = 'space';
+          });
 }
 
 checkLetter(letter){
   const found = 0;
-  const thisLetter = $('.letter');
-  for (let i = 0; i < theLeteer.length; i++) {
+  const theLetter = $('.letter');
+  for (let i = 0; i < theLetter.length; i++) {
     if (letter == theLetter[i].textContent) {
       theLetter[i].classList.add('match');
       found +=1;
