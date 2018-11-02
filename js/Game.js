@@ -1,22 +1,18 @@
-const phrase = new Phrase();
-
 //create game class
 class Game {
-  constuctor() {
+  constructor() {
     this.missed = 0;
     this.phrases = [
-          new Phrase('don dotta'),
-          new phrase('knxledge'),
-          new phrase('yes lawd'),
-          new phrase('suga mama'),
-          new phrase("d'evil")
+'don dotta',
+'knxledge',
+'yes lawd',
+'suga mama',
+"d'evil"
     ];
   }
 
   getRandomPhrase() {
-    let randomPhrase = [Math.floor(Math.random() * phrase.length)];
-    return randomPhrase;
-    console.log(randomPhrase);
+    return this.phrases[Math.floor(Math.random() * this.phrases.length)];
   }
   handleInteraction(letter) {
     phrase.checkLetter(letter);
@@ -54,9 +50,7 @@ gameOver() {
 
 
 startGame() {
-  this.missed = 0;
-  let gamePhrase = this.getRandomPhrase();
-  new Phrase(gamePhrase).addPhraseToDisplay()
-}
+window.phrase = new Phrase(game.getRandomPhrase())
+  }
 
 }

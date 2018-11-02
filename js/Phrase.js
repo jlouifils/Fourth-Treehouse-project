@@ -3,20 +3,19 @@
 // create class constuctor call phrase
 class Phrase {
   constuctor(phrase) {
-    this.phrase = phrase;
+    this.phrase = this.addPhraseToDisplay(phrase);
   };
 
-addPhraseToDisplay() {
+addPhraseToDisplay(phraseLetter) {
   const phraseList = document.querySelector('#phrase ul');
   const textPhrase = this.phrase;
 
-  textPhrase.forEach(phraseLetter => {
-            const li = document.createElement('li');
-            phraseList.appendChild(li);
-            li.setAttribute('class', 'hide');
-            li.textContent = phraseLetter;
-            return phraseLetter !== ' ' ? li.className = 'letter' : li.className = 'space';
-          });
+  for(let i = 0; i <=phrase.length; i++) {
+      const li = document.createElement('li');
+      phraseList.appendChild(li);
+      li.setAttribute('class', 'hide');
+      return phraseLetter !== ' ' ? li.className = 'letter' : li.className = 'space';
+    }
 }
 
 checkLetter(letter){
