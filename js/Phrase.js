@@ -1,14 +1,16 @@
-// this is the phrase js
+//// this is the phrase js
 
 // create class constuctor call phrase
 class Phrase {
   constuctor(phrase) {
-    this.phrase = this.addPhraseToDisplay(phrase);
+    this.phrase = phrase;
   };
 
 addPhraseToDisplay(phraseLetter) {
   const phraseList = document.querySelector('#phrase ul');
   const textPhrase = this.phrase;
+  const div = document.createElement('div');
+  phrasebox.appendChild(div);
 
   for(let i = 0; i <=phrase.length; i++) {
       const li = document.createElement('li');
