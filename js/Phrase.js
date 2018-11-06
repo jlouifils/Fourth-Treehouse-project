@@ -6,18 +6,17 @@ class Phrase {
     this.phrase = phrase;
   };
 
-addPhraseToDisplay(phraseLetter) {
+addPhraseToDisplay() {
   const phraseList = document.querySelector('#phrase ul');
   const textPhrase = this.phrase;
-  const div = document.createElement('div');
-  phrasebox.appendChild(div);
 
-  for(let i = 0; i <=phrase.length; i++) {
+  textPhrase.forEach(phraseLetter => {
       const li = document.createElement('li');
       phraseList.appendChild(li);
       li.setAttribute('class', 'hide');
+      li.textContent = phraseLetter;
       return phraseLetter !== ' ' ? li.className = 'letter' : li.className = 'space';
-    }
+    });
 }
 
 checkLetter(letter){

@@ -1,19 +1,16 @@
 //create game class
+const phrase = new Phrase
+
 class Game {
-  constructor() {
-    this.missed = 0;
-    this.phrases = [
-'don dotta',
-'knxledge',
-'yes lawd',
-'suga mama',
-"d'evil"
-    ];
+  constructor(missed, phrases) {
+    this.missed = missed;
+    this.phrases = phrases;
+}
+  getRandomPhrase() {
+    var randomPhrase = phrase[Math.floor(Math.random() * this.phrases.length)];
+    return randomPhrase.toUpperCase().split('');
   }
 
-  getRandomPhrase() {
-    return this.phrases[Math.floor(Math.random() * this.phrases.length)];
-  }
   handleInteraction(letter) {
     phrase.checkLetter(letter);
     $('#qwerty button').on('click', () =>{
@@ -50,7 +47,9 @@ gameOver() {
 
 
 startGame() {
-window.phrase = new Phrase(game.getRandomPhrase())
+this.missed = 0;
+let gamePhrase = this.getRandomPhrase();
+new Phrase(gamePhrase).addPhraseToDisplay()
   }
 
 }
