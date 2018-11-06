@@ -2,7 +2,7 @@
 
 // create class constuctor call phrase
 class Phrase {
-  constuctor(phrase) {
+  constructor(phrase) {
     this.phrase = phrase;
   };
 

@@ -1,5 +1,3 @@
-const game = new Game();
-
 
 const phrases = [
   'don dotta',
@@ -8,6 +6,8 @@ const phrases = [
   'suga mama',
   "d'evil"
   ];
+
+  const game = new Game(0, phrases);
 
  function resetDisplay() {
    $('#overlay').hide();

@@ -7,8 +7,8 @@ class Game {
     this.phrases = phrases;
 }
   getRandomPhrase() {
-    var randomPhrase = phrase[Math.floor(Math.random() * this.phrases.length)];
-    return randomPhrase.toUpperCase().split('');
+    const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+    return randomPhrase.toLowerCase().split('');
   }
 
   handleInteraction(letter) {
