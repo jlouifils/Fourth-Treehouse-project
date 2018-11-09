@@ -20,25 +20,19 @@ addPhraseToDisplay() {
 }
 
 checkLetter(letter){
-  const found = 0;
+  let found = false;
   const theLetter = $('.letter');
   for (let i = 0; i < theLetter.length; i++) {
-    if (letter == theLetter[i].textContent) {
-      theLetter[i].classList.add('match');
-      found +=1;
+    if (letter == theLetter[i]) {
+      found = true;
     }
   }
-
-  if (found > 0) {
-    return true;
-  } else {
-    return false;
-  }
+return found;
 
 }
 
 showMatchedLetter(click) {
-  document.querySelectorAll('.letter').forEach( letter =>{
+  document.querySelectorAll(' letter').forEach( letter =>{
     if (click.textContent === letter.textContent) {
       letter.classList.add('show');
       letter.classList.remove('hide');
