@@ -4,7 +4,7 @@ const phrases = [
   'knxledge',
   'yes lawd',
   'suga mama',
-  "d'evil"
+  "d evil"
   ];
 
   const game = new Game(0, phrases);
