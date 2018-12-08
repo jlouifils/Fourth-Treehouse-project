@@ -1,38 +1,31 @@
+const startButton = document.querySelector("#btn__reset");
+const overlay = document.querySelector('#overlay');
+const qwerty = document.querySelector('#qwerty');
 
-const phrases = [
-  'don dotta',
-  'knxledge',
-  'yes lawd',
-  'suga mama',
-  "d evil"
-  ];
+let game;
+  const phrases = [
+    'Illmatic',
+    'Yes Lawd',
+    'Knxwledge',
+    'King Kunta',
+    'Cole world'
+]
 
-  const game = new Game(0, phrases);
-
- function resetDisplay() {
-   $('#overlay').hide();
- }
-
-
-function markButton() {
-  $('#qwerty button').on('click', (e) =>{
-    e.target.disabled = true;
-    e.target.classList.add('chosen')
-  });
+function resetDisplay() {
+overlay.style.display = 'none'
 }
 
+function markButton(target, key) {
+$('.key').target.disabled = true;
+Game.handleInteraction(key)
+}
 
-window.addEventListener('click', (evt) =>{
-  if(evt.target.tagName === 'BUTTON') {
-    markButton();
-    game.handleInteraction(evt);
-  }
-});
-
-
-$('#btn__reset').on('click', () =>{
+startButton.addEventListener('click', (event) => {
   resetDisplay()
-  game.startGame()
+let game = new Game;
+  game.startGame();
 });
 
-//console.log(game.getRandomPhrase());
+qwerty.addEventListener('click', (event) => {
+  markButton(event)
+});
