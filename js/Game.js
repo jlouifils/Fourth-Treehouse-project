@@ -1,7 +1,10 @@
+const phrase = new Phrase();
+
 class Game{
 
-  constructor() {
-
+  constructor(missed, phrases) {
+    this.missed = missed;
+    this.phrases = phrases;
   }
   getRandomPhrase() {
 
@@ -19,7 +22,8 @@ class Game{
 
   }
   startGame() {
-    
+    this.missed = 0;
+    let
   }
 
 }

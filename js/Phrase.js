@@ -1,13 +1,13 @@
 class Phrase {
     constructor(phrase) {
-      this.phrase = phrase;
+      this.phrase = phrases;
     }
 
     addPhraseToDisplay() {
       const listPhrase = document.querySelector('#phrase ul');
       const phraseText = this.phrase;
 
-      phraseText.forEach( letterInPhrase => {
+      phraseText.from().forEach( letterInPhrase => {
         const li = document.createElement('li');
         listPhrase.appendChild('li');
         li.setAttribute('class','hide');
