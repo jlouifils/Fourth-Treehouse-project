@@ -1,13 +1,13 @@
 const phrase = new Phrase();
 
-class Game{
+class Game {
 
   constructor(missed, phrases) {
     this.missed = missed;
     this.phrases = phrases;
   }
   getRandomPhrase() {
-    var randomPhrase = phrases[math.floor(math.random()*phrases.length)];
+    var randomPhrase = phrases[Math.floor(Math.random()*phrases.length)];
     console.log(randomPhrase)
     return randomPhrase
   }
@@ -16,7 +16,7 @@ class Game{
       phrase.showMatchLetter(letterClick);
       this.checkForWin();
     } else {
-      removeLife();
+      this.removeLife();
     }
   }
   removeLife() {
@@ -28,15 +28,33 @@ class Game{
       this.gameOver();
     }
   }
-  checkForWin(){
-
+  checkForWin() {
+    const lengthPhrases = $('div ul li.letter').length;
+    const lengthMatch = $('div ul li.match').length;
+    if ( lengthPhrases === lengthMatch) {
+      this.gameOver();
+    }
   }
   gameOver() {
+    $('#overlay').css('display', 'block');
 
+    const gameOverMess = $('#game-over-message');
+    const overlay = $('#overlay');
+    const startButton = $('btn__reset');
+
+    if(this.missed === 5){
+    gameOverMess.text('You Lost');
+    overlay.show().addClass('Lose');
+    startButton.text('Try Again');
+    } else {
+      gameOverMess.text('You Win!!!');
+      overlay.show();
+      startButton.text('Go Again');
+    }
   }
   startGame() {
     this.missed = 0;
-    let
+    let gamePhrase = this.getRandomPhrase();
+    new Phrase(gamePhrase).addPhraseToDisplay();
   }
-
 }

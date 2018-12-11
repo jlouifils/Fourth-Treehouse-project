@@ -1,8 +1,4 @@
-const startButton = document.querySelector("#btn__reset");
-const overlay = document.querySelector('#overlay');
-const qwerty = document.querySelector('#qwerty');
-
-let game;
+const game = new Game();
   const phrases = [
     'Illmatic',
     'Yes Lawd',
@@ -12,20 +8,21 @@ let game;
 ]
 
 function resetDisplay() {
-overlay.style.display = 'none'
+  $('#overlay').hide();
 }
 
-function markButton(target, key) {
-$('.key').target.disabled = true;
-Game.handleInteraction(key)
+function markButton(event) {
+  event.target.disabled = true;
+  event.target.classList.add('chosen');
+  event.target.classList.add(event.target.textContent);
 }
 
-startButton.addEventListener('click', (event) => {
-  resetDisplay()
-let game = new Game;
-  game.startGame();
+$('#qwerty').on('click', (event) => {
+  markButton(event);
+  game.handleInteraction(event.target.innerHTML.toUpperCase());
 });
 
-qwerty.addEventListener('click', (event) => {
-  markButton(event)
+$("#btn__reset").on('click', (event) => {
+  resetDisplay()
+  game.startGame();
 });

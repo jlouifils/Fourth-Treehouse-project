@@ -1,13 +1,13 @@
 class Phrase {
     constructor(phrase) {
-      this.phrase = phrases;
-    }
+      this.phrase = phrase;
+    };
 
     addPhraseToDisplay() {
       const listPhrase = document.querySelector('#phrase ul');
       const phraseText = this.phrase;
 
-      phraseText.from().forEach( letterInPhrase => {
+      phraseText.forEach( letterInPhrase => {
         const li = document.createElement('li');
         listPhrase.appendChild('li');
         li.setAttribute('class','hide');
@@ -17,7 +17,7 @@ class Phrase {
         } else {
           li.className = 'space';
         }
-          return letterInPhrase
+          return letterInPhrase;
       });
     }
 
@@ -37,8 +37,12 @@ class Phrase {
     });
     }
 
-    showMatchLetter() {
-
+    showMatchLetter(letter) {
+      const match = document.querySelector(',match')
+      for (let i =0; i < match.length; i += 1) {
+        const right = match[i];
+        right.classList.add('show');
+        right.classList.remove('hide');
+      }
     }
-
 }
