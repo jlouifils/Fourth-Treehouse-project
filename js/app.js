@@ -5,7 +5,7 @@ const game = new Game();
     'Knxwledge',
     'King Kunta',
     'Cole world'
-]
+];
 
 function resetDisplay() {
   $('#overlay').hide();
