@@ -9,7 +9,7 @@ class Phrase {
 
       phraseText.forEach( letterInPhrase => {
         const li = document.createElement('li');
-        listPhrase.appendChild('li');
+        listPhrase.appendChild(li);
         li.setAttribute('class','hide');
         li.textContent = letterInPhrase;
         if(letterInPhrase !== ' ') {
@@ -21,12 +21,10 @@ class Phrase {
       });
     }
 
-
-
     checkLetter(letter) {
     const liPhrase = $('div ul li');
     const liPhraseText = $('div ul li').text().split('');
-    const click = letter;
+    const click = $('.letter');
     let call = false;
 
     liPhrase.each(function () {
@@ -38,7 +36,7 @@ class Phrase {
     }
 
     showMatchLetter(letter) {
-      const match = document.querySelector(',match')
+      const match = document.querySelector('match')
       for (let i =0; i < match.length; i += 1) {
         const right = match[i];
         right.classList.add('show');

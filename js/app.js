@@ -1,11 +1,4 @@
 const game = new Game();
-  const phrases = [
-    'Illmatic',
-    'Yes Lawd',
-    'Knxwledge',
-    'King Kunta',
-    'Cole world'
-];
 
 function resetDisplay() {
   $('#overlay').hide();
