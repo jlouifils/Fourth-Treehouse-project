@@ -15,18 +15,18 @@ class Phrase {
         if(letterInPhrase !== ' ') {
           li.className = 'letter';
         } else {
-          li.className = 'space';
+          li.className = 'hide space';
         }
           return letterInPhrase;
       });
     }
 
-    checkLetter(letterClick) {
+    checkLetter(letter) {
       var letters = $('.letter');
 
       let foundLetter = false;
       letters.each((i, value) => {
-        if ($(value).text() === letterClick) {
+        if ($(value).text() === letter) {
 
           foundLetter = true;
         }
@@ -35,9 +35,9 @@ class Phrase {
     }
 
 
-    showMatchLetter(letterClick) {
+    showMatchLetter(letter) {
       $('.letter').each(function() {
-        if($(this).text() === letterClick) {
+        if($(this).text() === letter) {
           $(this).addClass('show');
         }
       });

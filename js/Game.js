@@ -24,7 +24,7 @@ class Game {
     } else {
       this.removeLife();
     }
-    this.gameOver();
+    //this.gameOver();
   }
   removeLife() {
     const heart = $('.tries');
@@ -36,8 +36,8 @@ class Game {
     }
   }
   checkForWin() {
-    const lengthPhrases = $('letter').length;
-    const lengthMatch = $('letter.show').length;
+    const lengthPhrases = $('div ul li.letter').length;
+    const lengthMatch = $('div ul li.match').length;
     if ( lengthPhrases === lengthMatch) {
       return true;
     }
