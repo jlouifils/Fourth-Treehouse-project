@@ -21,26 +21,25 @@ class Phrase {
       });
     }
 
-    checkLetter(letter) {
-    const liPhrase = $('div ul li');
-    const liPhraseText = $('div ul li').text().split('');
-    const click = $('.letter');
-    let call = false;
+    checkLetter(letterClick) {
+      var letters = $('.letter');
 
-    liPhrase.each(function () {
-      if($(this).text() === click) {
-        $(this).addClass('match');
-        call = true;
-      }
-    });
+      let foundLetter = false;
+      letters.each((i, value) => {
+        if ($(value).text() === letterClick) {
+
+          foundLetter = true;
+        }
+      });
+      return foundLetter
     }
 
-    showMatchLetter(letter) {
-      const match = document.querySelector('match')
-      for (let i =0; i < match.length; i += 1) {
-        const right = match[i];
-        right.classList.add('show');
-        right.classList.remove('hide');
+
+    showMatchLetter(letterClick) {
+      $('.letter').each(function() {
+        if($(this).text() === letterClick) {
+          $(this).addClass('show');
+        }
+      });
       }
-    }
 }

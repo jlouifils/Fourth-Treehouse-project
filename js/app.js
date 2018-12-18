@@ -2,6 +2,8 @@ const game = new Game();
 
 function resetDisplay() {
   $('#overlay').hide();
+  $('#qwerty .key').prop('disabled', false).removeClass('chosen');
+  $('#phrase li').remove();
 }
 
 function markButton(event) {

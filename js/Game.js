@@ -24,6 +24,7 @@ class Game {
     } else {
       this.removeLife();
     }
+    this.gameOver();
   }
   removeLife() {
     const heart = $('.tries');
@@ -35,14 +36,14 @@ class Game {
     }
   }
   checkForWin() {
-    const lengthPhrases = $('div ul li.letter').length;
-    const lengthMatch = $('div ul li.match').length;
+    const lengthPhrases = $('letter').length;
+    const lengthMatch = $('letter.show').length;
     if ( lengthPhrases === lengthMatch) {
-      this.gameOver();
+      return true;
     }
   }
   gameOver() {
-    $('#overlay').css('display', 'block');
+    //$('#overlay').css('display', 'block');
 
     const gameOverMess = $('#game-over-message');
     const overlay = $('#overlay');
@@ -52,7 +53,8 @@ class Game {
     gameOverMess.text('You Lost');
     overlay.show().addClass('Lose');
     startButton.text('Try Again');
-    } else {
+  }
+  else if (this.checkForWin() === true) {
       gameOverMess.text('You Win!!!');
       overlay.show();
       startButton.text('Go Again');
