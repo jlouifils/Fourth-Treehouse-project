@@ -24,7 +24,7 @@ class Game {
     } else {
       this.removeLife();
     }
-    //this.gameOver();
+    this.gameOver();
   }
   removeLife() {
     const heart = $('.tries');

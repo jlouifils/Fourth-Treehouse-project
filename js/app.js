@@ -2,12 +2,13 @@ const game = new Game();
 
 // this function reset the game after the previous game is done
 function resetDisplay() {
-  var imageOfHeart = $('<img />', {src: "images/LiveHeart.png", alt: "Heart Icon", height: 35, width: 30,
-});
   $('#overlay').hide();
   $('#qwerty .key').prop('disabled', false).removeClass('chosen'); //reset the keyboard
   $('#phrase li').remove(); //remove previous phrase when a new game start
-  $('.tries').append();
+  const lives = document.querySelectorAll('img');
+      for(let i = 0; i < lives.length; i++){
+        lives[i].src = 'images/liveHeart.png';
+      }
 }
 
 function markButton(event) {
