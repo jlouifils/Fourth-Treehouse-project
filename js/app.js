@@ -1,6 +1,6 @@
 const game = new Game();
 
-// this function reset the game after the previous game is done
+//this will reset the phrases, keyboard on the screen and lives
 function resetDisplay() {
   $('#overlay').hide();
   $('#qwerty .key').prop('disabled', false).removeClass('chosen'); //reset the keyboard
@@ -13,11 +13,10 @@ function markButton(event) {
   event.target.classList.add(event.target.textContent);
 }
 // when a letter on the screen is click it will call markButton and the handleInteraction
-$('#qwerty').on('click', (event) => {
+$('#qwerty .key').on('click', (event) => {
   markButton(event);
   game.handleInteraction(event.target.innerHTML.toUpperCase());//capitolized the letter on the box phrase
 });
-//when the start button is click it reset the game and start it
 $("#btn__reset").on('click', (event) => {
   resetDisplay()
   game.startGame();

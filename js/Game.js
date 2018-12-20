@@ -60,21 +60,15 @@ class Game {
     overlay.show().addClass('Lose');
     startButton.text('Try Again');
 
-    startButton.click(function() {
-      location.reload()
-    })
   }
   // if the checkForWin is called the message and the display at the end of the game should be you win and reset the game
   else if (this.checkForWin() === true) {
       gameOverMess.text('You Win!!!');
       overlay.show().addClass('Win');
       startButton.text('Go Again');
-
-      startButton.click(function() {
-        location.reload()
-      })
     }
-  }
+  };
+
   //start game and call a new phrase
   startGame() {
     this.missed = 0;
