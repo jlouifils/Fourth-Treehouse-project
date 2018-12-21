@@ -59,6 +59,9 @@ class Game {
     gameOverMess.text('You Lost');
     overlay.show().addClass('Lose');
     startButton.text('Try Again');
+    $('#btn__reset').click(function() {
+                location.reload()
+            })
 
   }
   // if the checkForWin is called the message and the display at the end of the game should be you win and reset the game
@@ -66,6 +69,9 @@ class Game {
       gameOverMess.text('You Win!!!');
       overlay.show().addClass('Win');
       startButton.text('Go Again');
+      $('#btn__reset').click(function() {
+                location.reload()
+            })
     }
   };
 
