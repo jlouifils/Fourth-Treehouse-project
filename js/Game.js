@@ -58,20 +58,18 @@ class Game {
     if(this.missed === 5){
     gameOverMess.text('You Lost');
     overlay.show().addClass('Lose');
-    startButton.text('Try Again');
-    $('#btn__reset').click(function() {
+    startButton.text('Try Again').click(function() {
                 location.reload()
-            })
+            });
 
   }
   // if the checkForWin is called the message and the display at the end of the game should be you win and reset the game
   else if (this.checkForWin() === true) {
       gameOverMess.text('You Win!!!');
       overlay.show().addClass('Win');
-      startButton.text('Go Again');
-      $('#btn__reset').click(function() {
+      startButton.text('Go Again').click(function() {
                 location.reload()
-            })
+            });
     }
   };
 
